@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Wonderland — temukan destinasi wisata terbaik di Indonesia dan dunia, serta paket perjalanan yang berkesan."
+        />
+        <title>Wonderland | Beranda</title>
+        <link rel="icon" type="image/png" href="./img/Wonderland-removebg-preview.png?v=3" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <header class="afnan-header">
+            <div class="afnan-container afnan-navbar">
+                <a class="afnan-logo" href="index.html" aria-label="Wonderland - Beranda">
+                    <img class="afnan-logo-img" src="./img/Wonderland-removebg-preview.png?v=3" alt="" width="46" height="46" />
+                    <span class="afnan-logo-text">Wonder<span>land</span></span>
+                </a>
+
+                <button
+                    class="afnan-menu-toggle"
+                    id="afnan-menu-toggle"
+                    aria-label="Buka menu navigasi"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+                <nav class="afnan-nav-links" id="afnan-nav-links" aria-label="Navigasi utama">
+                    <a class="afnan-active" href="index.html">Home</a>
+                    <a href="about.html">Tentang</a>
+                    <a href="destinasi.html">Destinasi</a>
+                    <a href="paket.html">Paket Wisata</a>
+                    <a href="galeri.html">Galeri</a>
+                    <a href="contact.html">Kontak</a>
+                </nav>
+
+                <a class="afnan-btn afnan-btn-primary afnan-nav-cta" href="paket.html">
+                    Pesan Sekarang
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <!-- HERO -->
+            <section class="afnan-hero afnan-hero-home">
+                <div class="afnan-hero-overlay" aria-hidden="true"></div>
+
+                <div class="afnan-container afnan-hero-content">
+                    <p class="afnan-eyebrow">Petualangan dimulai di sini</p>
+
+                    <h1>
+                        Jelajahi dunia,<br />
+                        <p>ciptakan kenangan.</p>
+                    </h1>
+
+                    <p>
+                        Temukan destinasi terbaik Nusantara dan dunia, lalu nikmati perjalanan yang
+                        dirancang dengan nyaman, personal, dan tak terlupakan.
+                    </p>
+
+                    <div class="afnan-button-row">
+                        <a class="afnan-btn afnan-btn-primary" href="destinasi.html">
+                            Jelajahi Destinasi <span aria-hidden="true">→</span>
+                        </a>
+                        <a class="afnan-btn afnan-btn-outline" href="about.html"> Tentang Kami </a>
+                    </div>
+
+                    <div class="afnan-hero-stats">
+                        <div class="afnan-hero-stat">
+                            <strong>6</strong>
+                            <span>Destinasi pilihan</span>
+                        </div>
+                        <div class="afnan-hero-stat">
+                            <strong>4.9/5</strong>
+                            <span>Rating traveler</span>
+                        </div>
+                        <div class="afnan-hero-stat">
+                            <strong>24/7</strong>
+                            <span>Dukungan perjalanan</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PENCARIAN -->
+            <section class="afnan-search-section">
+                <div class="afnan-container">
+                    <form class="afnan-search-box" id="afnan-travel-search">
+                        <div class="afnan-search-item">
+                            <label for="afnan-destination">Destinasi</label>
+                            <input
+                                id="afnan-destination"
+                                type="text"
+                                placeholder="Mau ke mana?"
+                                autocomplete="off"
+                            />
+                        </div>
+
+                        <div class="afnan-search-item">
+                            <label for="afnan-region">Wilayah</label>
+                            <select id="afnan-region">
+                                <option value="">Semua Wilayah</option>
+                                <option value="indonesia">Indonesia</option>
+                                <option value="asia">Asia</option>
+                                <option value="eropa">Eropa</option>
+                            </select>
+                        </div>
+
+                        <div class="afnan-search-item">
+                            <label for="afnan-date">Rencana Berangkat</label>
+                            <input id="afnan-date" type="date" />
+                        </div>
+
+                        <button class="afnan-btn afnan-btn-primary" type="submit">
+                            Cari Destinasi
+                        </button>
+                    </form>
+
+                    <div class="afnan-trust-row">
+                        <span><b>✓</b> Destinasi terkurasi</span>
+                        <span><b>✓</b> Harga transparan</span>
+                        <span><b>✓</b> Pemandu lokal berpengalaman</span>
+                        <span><b>✓</b> Layanan pelanggan 24/7</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TENTANG KAMI -->
+            <section class="afnan-section">
+                <div class="afnan-container afnan-about-grid">
+                    <div class="afnan-about-media">
+                        <img
+                            class="afnan-about-main"
+                            src="./img/Terasering%20Sawah%20dengan%20Kolam%20Turkuois.png"
+                            alt="Terasering sawah dengan kolam berwarna turkuois"
+                        />
+                        <img
+                            class="afnan-about-secondary"
+                            src="./img/Nature.png"
+                            alt="Pemandangan alam Indonesia"
+                        />
+                        <div class="afnan-about-badge">
+                            <strong>4.9</strong>
+                            <span>Rating traveler</span>
+                        </div>
+                    </div>
+
+                    <div class="afnan-about-content">
+                        <p class="afnan-eyebrow afnan-dark-eyebrow">Tentang Kami</p>
+
+                        <h2>Perjalanan hebat dimulai dari sini</h2>
+
+                        <p>
+                            Wonderland membantu Anda menemukan destinasi menarik, mulai dari
+                            keindahan alam Indonesia hingga tempat wisata populer di berbagai
+                            belahan dunia.
+                        </p>
+
+                        <p>
+                            Kami merancang setiap perjalanan dengan detail — dari pemilihan
+                            akomodasi hingga pengalaman lokal yang otentik.
+                        </p>
+
+                        <ul class="afnan-check-list">
+                            <li>Rencana perjalanan yang disesuaikan dengan kebutuhan Anda.</li>
+                            <li>Pemandu lokal yang memahami cerita di balik setiap tempat.</li>
+                            <li>Dukungan penuh sebelum, selama, dan setelah perjalanan.</li>
+                        </ul>
+
+                        <a class="afnan-btn afnan-btn-primary" href="about.html"> Selengkapnya </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DESTINASI PILIHAN -->
+            <section class="afnan-section afnan-soft-bg">
+                <div class="afnan-container">
+                    <div class="afnan-section-heading">
+                        <div>
+                            <p class="afnan-eyebrow afnan-dark-eyebrow">Destinasi Pilihan</p>
+                            <h2>Temukan tempat impianmu</h2>
+                            <p>
+                                Berbagai destinasi menarik untuk pengalaman liburan yang tak
+                                terlupakan.
+                            </p>
+                        </div>
+
+                        <a class="afnan-text-link" href="destinasi.html">
+                            Lihat Semua Destinasi →
+                        </a>
+                    </div>
+
+                    <div class="afnan-card-grid">
+                        <article class="afnan-destination-card">
+                            <div class="afnan-card-media">
+                                <img
+                                    src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=85"
+                                    alt="Pantai dan pura di Bali"
+                                />
+                                <span class="afnan-tag">Indonesia</span>
+                                <span class="afnan-rating">4.9</span>
+                            </div>
+
+                            <div class="afnan-card-content">
+                                <h3>Bali</h3>
+                                <p>Pantai tropis, budaya yang hidup, dan suasana yang memukau.</p>
+
+                                <div class="afnan-card-footer">
+                                    <span class="afnan-card-price">
+                                        3 Hari 2 Malam
+                                        <strong>Rp1.500.000</strong>
+                                    </span>
+                                    <a class="afnan-card-link" href="detail.html">Lihat Detail →</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="afnan-destination-card">
+                            <div class="afnan-card-media">
+                                <img
+                                    src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=900&q=85"
+                                    alt="Pulau-pulau Raja Ampat"
+                                />
+                                <span class="afnan-tag">Indonesia</span>
+                                <span class="afnan-rating">4.8</span>
+                            </div>
+
+                            <div class="afnan-card-content">
+                                <h3>Raja Ampat</h3>
+                                <p>Surga bawah laut dengan pulau-pulau karst yang eksotis.</p>
+
+                                <div class="afnan-card-footer">
+                                    <span class="afnan-card-price">
+                                        4 Hari 3 Malam
+                                        <strong>Rp3.800.000</strong>
+                                    </span>
+                                    <a class="afnan-card-link" href="detail.html">Lihat Detail →</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="afnan-destination-card">
+                            <div class="afnan-card-media">
+                                <img
+                                    src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?auto=format&fit=crop&w=900&q=85"
+                                    alt="Pegunungan dan danau di Swiss"
+                                />
+                                <span class="afnan-tag">Eropa</span>
+                                <span class="afnan-rating">4.9</span>
+                            </div>
+
+                            <div class="afnan-card-content">
+                                <h3>Swiss</h3>
+                                <p>Pegunungan Alpen, danau jernih, dan desa yang menawan.</p>
+
+                                <div class="afnan-card-footer">
+                                    <span class="afnan-card-price">
+                                        5 Hari 4 Malam
+                                        <strong>Rp12.000.000</strong>
+                                    </span>
+                                    <a class="afnan-card-link" href="detail.html">Lihat Detail →</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KEUNGGULAN -->
+            <section class="afnan-section">
+                <div class="afnan-container">
+                    <div class="afnan-centered-heading">
+                        <p class="afnan-eyebrow afnan-dark-eyebrow">Keunggulan Kami</p>
+                        <h2>Mengapa memilih kami?</h2>
+                        <p>
+                            Kami memberikan pelayanan terbaik agar setiap perjalanan terasa mudah,
+                            aman, dan berkesan.
+                        </p>
+                    </div>
+
+                    <div class="afnan-feature-grid">
+                        <article class="afnan-feature-card">
+                            <div class="afnan-feature-icon">✧</div>
+                            <h3>Destinasi Terkurasi</h3>
+                            <p>
+                                Pilihan destinasi terbaik dari berbagai wilayah, dipilih dengan
+                                cermat.
+                            </p>
+                        </article>
+
+                        <article class="afnan-feature-card">
+                            <div class="afnan-feature-icon">◈</div>
+                            <h3>Harga Transparan</h3>
+                            <p>Paket perjalanan dengan rincian biaya yang jelas dan bersahabat.</p>
+                        </article>
+
+                        <article class="afnan-feature-card">
+                            <div class="afnan-feature-icon">✈</div>
+                            <h3>Pemandu Lokal</h3>
+                            <p>
+                                Nikmati cerita dan pengalaman otentik bersama pemandu berpengalaman.
+                            </p>
+                        </article>
+
+                        <article class="afnan-feature-card">
+                            <div class="afnan-feature-icon">☎</div>
+                            <h3>Dukungan 24/7</h3>
+                            <p>Tim kami siap membantu Anda sebelum dan selama perjalanan.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- STATISTIK -->
+            <section class="afnan-stats-band">
+                <div class="afnan-container afnan-stats-grid">
+                    <div class="afnan-stat">
+                        <strong>120+</strong>
+                        <span>Destinasi</span>
+                    </div>
+                    <div class="afnan-stat">
+                        <strong>12rb+</strong>
+                        <span>Traveler bahagia</span>
+                    </div>
+                    <div class="afnan-stat">
+                        <strong>4.9/5</strong>
+                        <span>Rating kepuasan</span>
+                    </div>
+                    <div class="afnan-stat">
+                        <strong>10+</strong>
+                        <span>Tahun pengalaman</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TESTIMONI -->
+            <section class="afnan-section afnan-soft-bg">
+                <div class="afnan-container">
+                    <div class="afnan-centered-heading">
+                        <p class="afnan-eyebrow afnan-dark-eyebrow">Cerita Traveler</p>
+                        <h2>Kenangan dari mereka</h2>
+                        <p>
+                            Pengalaman nyata dari para traveler yang telah menjelajah bersama
+                            Wonderland.
+                        </p>
+                    </div>
+
+                    <div class="afnan-testimonial-grid">
+                        <article class="afnan-testimonial-card">
+                            <div class="afnan-stars" aria-label="Rating 5 dari 5">★★★★★</div>
+                            <p>
+                                “Perjalanan ke Bali benar-benar terasa personal. Semua jadwal
+                                tertata rapi, dan pemandunya sangat ramah serta informatif.”
+                            </p>
+                            <div class="afnan-testimonial-author">
+                                <span class="afnan-avatar">RA</span>
+                                <div>
+                                    <strong>Rina Anggraini</strong>
+                                    <span>Traveler, Jakarta</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="afnan-testimonial-card">
+                            <div class="afnan-stars" aria-label="Rating 5 dari 5">★★★★★</div>
+                            <p>
+                                “Raja Ampat melebihi ekspektasi. Tim Wonderland membantu kami
+                                dari perencanaan sampai kembali ke rumah. Sangat direkomendasikan.”
+                            </p>
+                            <div class="afnan-testimonial-author">
+                                <span class="afnan-avatar">BD</span>
+                                <div>
+                                    <strong>Bima Darmawan</strong>
+                                    <span>Traveler, Surabaya</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="afnan-testimonial-card">
+                            <div class="afnan-stars" aria-label="Rating 5 dari 5">★★★★★</div>
+                            <p>
+                                “Liburan ke Swiss jadi mudah karena semuanya sudah diatur. Kami
+                                tinggal menikmati pemandangan dan mengabadikan momen.”
+                            </p>
+                            <div class="afnan-testimonial-author">
+                                <span class="afnan-avatar">SL</span>
+                                <div>
+                                    <strong>Sinta Lestari</strong>
+                                    <span>Traveler, Bandung</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CALL TO ACTION -->
+            <section class="afnan-cta-section afnan-cta-nature">
+                <div class="afnan-container afnan-centered-heading">
+                    <p class="afnan-eyebrow">Waktunya berlibur</p>
+                    <h2>Siap memulai petualangan baru?</h2>
+                    <p>
+                        Rencanakan perjalanan impian Anda bersama Wonderland. Tim kami siap
+                        membantu menyusun itinerary terbaik.
+                    </p>
+                    <a class="afnan-btn afnan-btn-light" href="contact.html"> Hubungi Kami </a>
+                </div>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="afnan-footer">
+            <div class="afnan-container afnan-footer-grid">
+                <div class="afnan-footer-brand">
+                    <a class="afnan-logo" href="index.html" aria-label="Wonderland">
+                        <img class="afnan-logo-img" src="./img/Wonderland-removebg-preview.png?v=3" alt="" width="46" height="46" />
+                        <span class="afnan-logo-text">Wonder<span>land</span></span>
+                    </a>
+
+                    <p>
+                        Temukan keindahan dunia dan ciptakan kenangan perjalanan yang tidak
+                        terlupakan.
+                    </p>
+
+                    <div class="afnan-socials">
+                        <a class="afnan-social" href="#" aria-label="Instagram">IG</a>
+                        <a class="afnan-social" href="#" aria-label="Facebook">FB</a>
+                        <a class="afnan-social" href="#" aria-label="YouTube">YT</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Menu</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">Tentang Kami</a>
+                    <a href="destinasi.html">Destinasi</a>
+                    <a href="paket.html">Paket Wisata</a>
+                </div>
+
+                <div>
+                    <h3>Informasi</h3>
+                    <a href="galeri.html">Galeri</a>
+                    <a href="contact.html">Kontak</a>
+                    <a href="contact.html">FAQ</a>
+                    <a href="about.html">Visi &amp; Misi</a>
+                </div>
+
+                <div class="afnan-footer-newsletter">
+                    <h3>Kontak</h3>
+                    <p>Hubungi kami untuk pertanyaan seputar perjalanan Anda.</p>
+                    <p>Email: <a href="mailto:info@wonderland.com">info@wonderland.com</a></p>
+                    <p>Telepon: <a href="tel:+6289671036388">0896 7103 6388</a></p>
+                </div>
+            </div>
+
+            <div class="afnan-container afnan-footer-bottom">
+                <span>© 2026 Wonderland. All Rights Reserved.</span>
+                <div>
+                    <a href="about.html">Kebijakan Privasi</a>
+                    <a href="contact.html">Syarat &amp; Ketentuan</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>

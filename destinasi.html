@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Jelajahi pilihan destinasi wisata Indonesia, Asia, dan Eropa bersama Wonderland."
+        />
+        <title>Destinasi Wisata | Wonderland</title>
+        <link rel="icon" type="image/png" href="./img/Wonderland-removebg-preview.png?v=3" />
+        <link rel="stylesheet" href="css/style.css" />
+    </head>
+    <body>
+        <header class="afnan-header">
+            <div class="afnan-container afnan-navbar">
+                <a class="afnan-logo" href="index.html" aria-label="Wonderland - Beranda">
+                    <img class="afnan-logo-img" src="./img/Wonderland-removebg-preview.png?v=3" alt="" width="46" height="46" />
+                    <span class="afnan-logo-text">Wonder<span>land</span></span>
+                </a>
+
+                <button
+                    class="afnan-menu-toggle"
+                    id="afnan-menu-toggle"
+                    aria-label="Buka menu navigasi"
+                    aria-expanded="false"
+                >
+                    ☰
+                </button>
+
+                <nav class="afnan-nav-links" id="afnan-nav-links" aria-label="Navigasi utama">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">Tentang</a>
+                    <a class="afnan-active" href="destinasi.html">Destinasi</a>
+                    <a href="paket.html">Paket Wisata</a>
+                    <a href="galeri.html">Galeri</a>
+                    <a href="contact.html">Kontak</a>
+                </nav>
+
+                <a class="afnan-btn afnan-btn-primary afnan-nav-cta" href="paket.html">
+                    Pesan Sekarang
+                </a>
+            </div>
+        </header>
+
+        <main>
+            <section class="afnan-page-hero afnan-page-hero-destinasi">
+                <div class="afnan-container">
+                    <nav class="afnan-breadcrumb" aria-label="Breadcrumb">
+                        <a href="index.html">Beranda</a>
+                        <span>/</span>
+                        <span>Destinasi</span>
+                    </nav>
+
+                    <p class="afnan-eyebrow">Wonderland</p>
+                    <h1>Destinasi Wisata</h1>
+                    <p>
+                        Pilih destinasi favorit Anda, dari keindahan Nusantara hingga kota-kota
+                        ikonik dunia.
+                    </p>
+                </div>
+            </section>
+
+            <section class="afnan-section">
+                <div class="afnan-container">
+                    <div class="afnan-section-heading">
+                        <div>
+                            <p class="afnan-eyebrow afnan-dark-eyebrow">Jelajahi Pilihan</p>
+                            <h2>Temukan tujuan berikutnya</h2>
+                            <p>
+                                Saring destinasi berdasarkan wilayah untuk menemukan perjalanan yang
+                                paling sesuai dengan Anda.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="afnan-filter-row" id="afnan-destination-filters">
+                        <button class="afnan-filter-btn afnan-filter-active" data-filter="all">
+                            Semua
+                        </button>
+                        <button class="afnan-filter-btn" data-filter="indonesia">Indonesia</button>
+                        <button class="afnan-filter-btn" data-filter="asia">Asia</button>
+                        <button class="afnan-filter-btn" data-filter="eropa">Eropa</button>
+                    </div>
+
+                    <p class="afnan-search-note" id="afnan-search-note">
+                        Jelajahi pilihan destinasi berikut.
+                    </p>
+
+                    <div class="afnan-card-grid" id="afnan-destination-grid">
+                        <article class="afnan-destination-card" data-category="indonesia">
+                            <div class="afnan-card-media">
+                                <img
+                                    src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=900&q=85"
+                                    alt="Pantai dan pura di Bali"
+                                />
+                                <span class="afnan-tag">Indonesia</span>
+                                <span class="afnan-rating">4.9</span>
+                            </div>
+                            <div class="afnan-card-content">
+                                <h3>Bali</h3>
+                                <p>Pantai tropis, budaya yang hidup, dan suasana yang memukau.</p>
+                                <div class="afnan-card-footer">
+                                    <span class="afnan-card-price">
+                                        Mulai dari
+                                        <strong>Rp1.500.000</strong>
+                                    </span>
+                                    <a class="afnan-card-link" href="detail.html">Lihat Detail →</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="afnan-destination-card" data-category="indonesia">
+                            <div class="afnan-card-media">
+                                <img
+                                    src="./img/Raja Ampat.png"
+                                    alt="Pulau-pulau Raja Ampat"
+                                />
+                                <span class="afnan-tag">Indonesia</span>
+                                <span class="afnan-rating">4.8</span>
+                            </div>
+                            <div class="afnan-card-content">
+                                <h3>Raja Ampat</h3>
+                                <p>Surga bawah laut dengan pulau-pulau karst yang eksotis.</p>
+                                <div class="afnan-card-footer">
+                                    <span class="afnan-card-price">
+                                        Mulai dari
+                                        <strong>Rp3.800.000</strong>
+                                    </span>
+                                    <a class="afnan-card-link" href="detail.html">Lihat Detail →</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="afnan-destination-card" data-category="asia">
+                            <div class="afnan-card-media">
+                                <img
+                                    src="./img/Tokyo.png"
+                                    alt="Suasana kota Tokyo di Jepang"
+                                />
+                                <span class="afnan-tag">Asia</span>
+                                <span class="afnan-rating">4.8</span>
+                            </div>
+                            <div class="afnan-card-content">
+                                <h3>Tokyo</h3>
+                                <p>Perpaduan teknologi modern dan tradisi Jepang yang khas.</p>
+                                <div class="afnan-card-footer">
+                                    <span class="afnan-card-price">
+                                        Mulai dari
+                                        <strong>Rp9.500.000</strong>
+                                    </span>
+                                    <a class="afnan-card-link" href="detail.html">Lihat Detail →</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="afnan-destination-card" data-category="eropa">
+                            <div class="afnan-card-media">
+                                <img
+                                    src="./img/Swis.jfif"
+                                    alt="di Swiss"
+                                />
+                                <span class="afnan-tag">Eropa</span>
+                                <span class="afnan-rating">4.9</span>
+                            </div>
+                            <div class="afnan-card-content">
+                                <h3>Swiss</h3>
+                                <p>Pegunungan Alpen, danau jernih, dan desa yang menawan.</p>
+                                <div class="afnan-card-footer">
+                                    <span class="afnan-card-price">
+                                        Mulai dari
+                                        <strong>Rp12.000.000</strong>
+                                    </span>
+                                    <a class="afnan-card-link" href="detail.html">Lihat Detail →</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="afnan-destination-card" data-category="indonesia">
+                            <div class="afnan-card-media">
+                                <img
+                                    src="./img/Danau Toba.jfif"
+                                    alt="Pemandangan alam Danau Toba"
+                                />
+                                <span class="afnan-tag">Indonesia</span>
+                                <span class="afnan-rating">4.7</span>
+                            </div>
+                            <div class="afnan-card-content">
+                                <h3>Danau Toba</h3>
+                                <p>Danau vulkanik terbesar dengan panorama hijau yang tenang.</p>
+                                <div class="afnan-card-footer">
+                                    <span class="afnan-card-price">
+                                        Mulai dari
+                                        <strong>Rp1.200.000</strong>
+                                    </span>
+                                    <a class="afnan-card-link" href="detail.html">Lihat Detail →</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="afnan-destination-card" data-category="eropa">
+                            <div class="afnan-card-media">
+                                <img
+                                    src="./img/paris.png"
+                                    alt="Kota Paris di Eropa"
+                                />
+                                <span class="afnan-tag">Eropa</span>
+                                <span class="afnan-rating">4.8</span>
+                            </div>
+                            <div class="afnan-card-content">
+                                <h3>Paris</h3>
+                                <p>Kota seni, kuliner, dan arsitektur klasik yang romantis.</p>
+                                <div class="afnan-card-footer">
+                                    <span class="afnan-card-price">
+                                        Mulai dari
+                                        <strong>Rp14.500.000</strong>
+                                    </span>
+                                    <a class="afnan-card-link" href="detail.html">Lihat Detail →</a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="afnan-cta-section afnan-cta-nature">
+                <div class="afnan-container afnan-centered-heading">
+                    <p class="afnan-eyebrow">Belum menemukan tujuan?</p>
+                    <h2>Ceritakan liburan impian Anda</h2>
+                    <p>
+                        Tim kami akan membantu menyusun itinerary dan memilih destinasi yang paling
+                        sesuai dengan Anda.
+                    </p>
+                    <a class="afnan-btn afnan-btn-light" href="contact.html"> Konsultasi Gratis </a>
+                </div>
+            </section>
+        </main>
+
+        <footer class="afnan-footer">
+            <div class="afnan-container afnan-footer-grid">
+                <div class="afnan-footer-brand">
+                    <a class="afnan-logo" href="index.html" aria-label="Wonderland">
+                        <img class="afnan-logo-img" src="./img/Wonderland-removebg-preview.png?v=3" alt="" width="46" height="46" />
+                        <span class="afnan-logo-text">Wonder<span>land</span></span>
+                    </a>
+
+                    <p>
+                        Temukan keindahan dunia dan ciptakan kenangan perjalanan yang tidak
+                        terlupakan.
+                    </p>
+
+                    <div class="afnan-socials">
+                        <a class="afnan-social" href="#" aria-label="Instagram">IG</a>
+                        <a class="afnan-social" href="#" aria-label="Facebook">FB</a>
+                        <a class="afnan-social" href="#" aria-label="YouTube">YT</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Menu</h3>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">Tentang Kami</a>
+                    <a href="destinasi.html">Destinasi</a>
+                    <a href="paket.html">Paket Wisata</a>
+                </div>
+
+                <div>
+                    <h3>Informasi</h3>
+                    <a href="galeri.html">Galeri</a>
+                    <a href="contact.html">Kontak</a>
+                    <a href="contact.html">FAQ</a>
+                    <a href="about.html">Visi &amp; Misi</a>
+                </div>
+
+                <div class="afnan-footer-newsletter">
+                    <h3>Kontak</h3>
+                    <p>Hubungi kami untuk pertanyaan seputar perjalanan Anda.</p>
+                    <p>Email: <a href="mailto:info@wonderland.com">info@wonderland.com</a></p>
+                    <p>Telepon: <a href="tel:+6289671036388">0896 7103 6388</a></p>
+                </div>
+            </div>
+
+            <div class="afnan-container afnan-footer-bottom">
+                <span>© 2026 Wonderland. All Rights Reserved.</span>
+                <div>
+                    <a href="about.html">Kebijakan Privasi</a>
+                    <a href="contact.html">Syarat &amp; Ketentuan</a>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>

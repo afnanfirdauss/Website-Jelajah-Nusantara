@@ -1,0 +1,2774 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+/* =========================================================
+   DESIGN TOKENS
+   ========================================================= */
+
+:root {
+    --primary: #0f6b52;
+    --primary-dark: #0a4a39;
+    --primary-deep: #072e25;
+    --primary-soft: #e8f2ee;
+    --accent: #e6a53c;
+    --accent-soft: #fbf1dd;
+    --ink: #10251f;
+    --ink-soft: #1c3a31;
+    --muted: #5d6f68;
+    --line: #e3e8e3;
+    --paper: #ffffff;
+    --sand: #f7f4ec;
+    --sand-deep: #efe9dc;
+
+    --radius-xl: 28px;
+    --radius-lg: 22px;
+    --radius: 16px;
+    --radius-sm: 12px;
+
+    --shadow-sm: 0 6px 18px rgba(16, 37, 31, 0.06);
+    --shadow-md: 0 18px 48px rgba(16, 37, 31, 0.1);
+    --shadow-lg: 0 30px 80px rgba(16, 37, 31, 0.18);
+
+    --font-body: "Plus Jakarta Sans", "DM Sans", system-ui, -apple-system, sans-serif;
+    --font-display: "Fraunces", "Playfair Display", Georgia, serif;
+
+    /* Alias lama agar tetap kompatibel */
+    --afnan-primary: var(--primary);
+    --afnan-dark: var(--ink);
+    --afnan-muted: var(--muted);
+    --afnan-light: var(--sand);
+}
+
+/* =========================================================
+    RESET & BASE
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+    color: inherit;
+}
+
+button {
+    background: none;
+    border: 0;
+}
+
+::selection {
+    background: var(--primary);
+    color: #fff;
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.afnan-container {
+    width: min(1180px, calc(100% - 48px));
+    margin-inline: auto;
+}
+
+.afnan-sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.afnan-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 14px 27px;
+    border-radius: 999px;
+    border: 1px solid transparent;
+    font-weight: 700;
+    font-size: 0.93rem;
+    letter-spacing: 0.01em;
+    line-height: 1.2;
+    cursor: pointer;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.afnan-btn-primary {
+    background: linear-gradient(135deg, #12795c 0%, #0a5440 100%);
+    color: #fff;
+    box-shadow: 0 12px 26px rgba(15, 107, 82, 0.24);
+}
+
+.afnan-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 18px 34px rgba(15, 107, 82, 0.3);
+    background: linear-gradient(135deg, #158a68 0%, #0b5c46 100%);
+}
+
+.afnan-btn-outline {
+    border-color: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.afnan-btn-outline:hover {
+    background: #fff;
+    border-color: #fff;
+    color: var(--ink);
+    transform: translateY(-2px);
+}
+
+.afnan-btn-light {
+    background: #fff;
+    color: var(--ink);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.16);
+}
+
+.afnan-btn-light:hover {
+    transform: translateY(-2px);
+    background: var(--accent);
+    color: #2a1c05;
+}
+
+.afnan-button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 32px;
+}
+
+/* =========================================================
+   HEADER / NAVBAR
+   ========================================================= */
+
+.afnan-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(16, 37, 31, 0.07);
+    transition:
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+.afnan-header.afnan-scrolled {
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 12px 34px rgba(16, 37, 31, 0.08);
+}
+
+.afnan-navbar {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 26px;
+}
+
+.afnan-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    white-space: nowrap;
+}
+
+.afnan-logo-img {
+    display: block;
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.afnan-logo-text {
+    font-family: var(--font-display);
+    font-size: 1.32rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: var(--ink);
+}
+
+.afnan-logo-text span {
+    color: var(--primary);
+}
+
+.afnan-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+.afnan-nav-links a {
+    position: relative;
+    padding: 6px 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #45554e;
+    transition: color 0.2s ease;
+}
+
+.afnan-nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--accent);
+    transition: width 0.25s ease;
+}
+
+.afnan-nav-links a:hover,
+.afnan-nav-links .afnan-active {
+    color: var(--primary);
+}
+
+.afnan-nav-links a:hover::after,
+.afnan-nav-links .afnan-active::after {
+    width: 100%;
+}
+
+.afnan-nav-cta {
+    padding: 11px 21px;
+    font-size: 0.86rem;
+    box-shadow: 0 8px 20px rgba(15, 107, 82, 0.2);
+}
+
+.afnan-menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    background: #fff;
+    font-size: 1.25rem;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--ink);
+}
+
+/* =========================================================
+   HERO BERANDA
+   ========================================================= */
+
+.afnan-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: clamp(600px, 88vh, 760px);
+    color: #fff;
+    background-color: var(--primary-deep);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    isolation: isolate;
+}
+
+.afnan-hero-home {
+    background-image: url("../img/Panorama%20Gunung%20Berapi%20Saat%20Senja.png");
+}
+
+.afnan-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5, 21, 17, 0.74) 0%,
+            rgba(5, 21, 17, 0.28) 40%,
+            rgba(5, 21, 17, 0.86) 100%
+        ),
+        linear-gradient(90deg, rgba(5, 21, 17, 0.78) 0%, rgba(5, 21, 17, 0.15) 70%);
+}
+
+.afnan-hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 84px 0 150px;
+}
+
+.afnan-hero h1 {
+    max-width: 880px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2.9rem, 6.4vw, 5rem);
+    line-height: 1.04;
+    letter-spacing: -0.035em;
+    margin: 20px 0 24px;
+    text-wrap: balance;
+}
+
+.afnan-hero h1 em {
+    font-style: italic;
+    color: #f3c97e;
+}
+
+.afnan-hero-content > p:not(.afnan-eyebrow) {
+    max-width: 545px;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 1.06rem;
+    line-height: 1.75;
+}
+
+.afnan-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.afnan-eyebrow::before {
+    content: "";
+    width: 24px;
+    height: 1.5px;
+    background: currentColor;
+    opacity: 0.7;
+}
+
+.afnan-dark-eyebrow {
+    color: var(--primary);
+}
+
+.afnan-hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    margin-top: 44px;
+}
+
+.afnan-hero-stat {
+    padding: 0 36px;
+    border-left: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.afnan-hero-stat:first-child {
+    padding-left: 0;
+    border-left: 0;
+}
+
+.afnan-hero-stat strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.9rem;
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.afnan-hero-stat span {
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.66);
+}
+
+/* =========================================================
+   PENCARIAN
+   ========================================================= */
+
+.afnan-search-section {
+    position: relative;
+    z-index: 6;
+    margin-top: -74px;
+}
+
+.afnan-search-box {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr 1fr auto;
+    align-items: stretch;
+    gap: 2px;
+    padding: 12px;
+    background: #fff;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(16, 37, 31, 0.05);
+}
+
+.afnan-search-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    padding: 10px 18px;
+    border-radius: var(--radius);
+    border-left: 1px solid var(--line);
+    transition: background 0.2s ease;
+}
+
+.afnan-search-item:first-child {
+    border-left: 0;
+}
+
+.afnan-search-item:hover,
+.afnan-search-item:focus-within {
+    background: var(--sand);
+}
+
+.afnan-search-item label,
+.afnan-contact-form label {
+    font-size: 0.63rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.afnan-search-item input,
+.afnan-search-item select {
+    width: 100%;
+    padding: 4px 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    outline: none;
+    font-size: 0.94rem;
+    font-weight: 600;
+    color: var(--ink);
+}
+
+.afnan-search-item input::placeholder {
+    color: #94a29c;
+    font-weight: 500;
+}
+
+.afnan-search-item select {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image:
+        linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+        linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+    background-position:
+        calc(100% - 14px) 55%,
+        calc(100% - 9px) 55%;
+    background-size:
+        5px 5px,
+        5px 5px;
+    background-repeat: no-repeat;
+    padding-right: 24px;
+}
+
+.afnan-search-item input[type="date"] {
+    color-scheme: light;
+}
+
+.afnan-search-box .afnan-btn {
+    min-height: 62px;
+    height: 100%;
+    padding: 0 28px;
+    border-radius: var(--radius);
+    white-space: nowrap;
+    box-shadow: none;
+}
+
+.afnan-trust-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 34px;
+    margin-top: 22px;
+}
+
+.afnan-trust-row span {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 0.79rem;
+    font-weight: 600;
+    color: var(--muted);
+}
+
+.afnan-trust-row b {
+    display: grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-size: 0.62rem;
+    font-weight: 800;
+}
+
+/* =========================================================
+   SECTION UMUM
+   ========================================================= */
+
+.afnan-section {
+    padding: 100px 0;
+}
+
+.afnan-soft-bg {
+    background: var(--sand);
+}
+
+.afnan-section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 46px;
+}
+
+.afnan-section-heading h2,
+.afnan-about-content h2,
+.afnan-centered-heading h2,
+.afnan-contact-info h2,
+.afnan-detail-grid h2,
+.afnan-detail-main h2,
+.afnan-booking-card h2,
+.afnan-cta-section h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.95rem, 3.4vw, 2.9rem);
+    line-height: 1.14;
+    letter-spacing: -0.025em;
+    margin: 12px 0 16px;
+    text-wrap: balance;
+}
+
+.afnan-section-heading > div {
+    max-width: 620px;
+}
+
+.afnan-section-heading p,
+.afnan-centered-heading > p:last-child {
+    color: var(--muted);
+    max-width: 540px;
+}
+
+.afnan-centered-heading {
+    max-width: 720px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.afnan-centered-heading .afnan-eyebrow {
+    justify-content: center;
+}
+
+.afnan-text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 19px;
+    border-radius: 999px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-size: 0.84rem;
+    font-weight: 700;
+    white-space: nowrap;
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.afnan-text-link:hover {
+    background: var(--primary);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   TENTANG (BERANDA)
+   ========================================================= */
+
+.afnan-about-grid {
+    display: grid;
+    grid-template-columns: 1.06fr 1fr;
+    align-items: center;
+    gap: 84px;
+}
+
+.afnan-about-media {
+    position: relative;
+    padding: 0 34px 44px 0;
+}
+
+.afnan-about-main {
+    height: 500px;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.afnan-about-secondary {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 52%;
+    height: 218px;
+    border: 7px solid #fff;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.afnan-about-badge {
+    position: absolute;
+    top: 26px;
+    right: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding: 13px 18px;
+    border-radius: var(--radius);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(8px);
+}
+
+.afnan-about-badge strong {
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--ink);
+}
+
+.afnan-about-badge span {
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.afnan-about-content > p {
+    color: var(--muted);
+    margin-bottom: 15px;
+    max-width: 500px;
+}
+
+.afnan-check-list {
+    display: grid;
+    gap: 12px;
+    margin: 24px 0 30px;
+}
+
+.afnan-check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    font-size: 0.93rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+}
+
+.afnan-check-list li::before {
+    content: "✓";
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 22px;
+    height: 22px;
+    margin-top: 3px;
+    border-radius: 50%;
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-size: 0.7rem;
+    font-weight: 800;
+}
+
+/* =========================================================
+    KARTU DESTINASI & PAKET
+   ========================================================= */
+
+.afnan-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.afnan-destination-card,
+.afnan-package-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.afnan-destination-card:hover,
+.afnan-package-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-color: transparent;
+}
+
+.afnan-destination-card[hidden] {
+    display: none;
+}
+
+.afnan-card-media {
+    position: relative;
+    overflow: hidden;
+}
+
+.afnan-destination-card > img,
+.afnan-package-card > img,
+.afnan-card-media img {
+    height: 242px;
+    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.afnan-destination-card:hover > img,
+.afnan-package-card:hover > img,
+.afnan-destination-card:hover .afnan-card-media img {
+    transform: scale(1.06);
+}
+
+.afnan-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 1;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(8px);
+    color: var(--ink);
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.afnan-tag.afnan-tag-accent {
+    background: var(--accent);
+    color: #2a1c05;
+}
+
+.afnan-rating {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 11px;
+    border-radius: 999px;
+    background: rgba(7, 30, 24, 0.68);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    font-size: 0.74rem;
+    font-weight: 700;
+}
+
+.afnan-rating::before {
+    content: "★";
+    color: var(--accent);
+    font-size: 0.72rem;
+}
+
+.afnan-card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 24px 24px 26px;
+}
+
+.afnan-card-content > h3 {
+    font-family: var(--font-display);
+    font-size: 1.52rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+.afnan-card-content > p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 18px;
+}
+
+.afnan-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: auto;
+    padding-top: 17px;
+    border-top: 1px solid var(--line);
+}
+
+.afnan-card-price {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.afnan-card-price strong {
+    font-family: var(--font-display);
+    font-size: 1.16rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    color: var(--primary-dark);
+}
+
+.afnan-card-link,
+.afnan-card-content > a:not(.afnan-btn) {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--primary);
+    transition:
+        gap 0.25s ease,
+        color 0.25s ease;
+}
+
+.afnan-card-link:hover,
+.afnan-card-content > a:not(.afnan-btn):hover {
+    gap: 10px;
+    color: var(--primary-dark);
+}
+
+/* =========================================================
+   KEUNGGULAN
+   ========================================================= */
+
+.afnan-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.afnan-feature-card {
+    position: relative;
+    overflow: hidden;
+    padding: 30px 26px 32px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.afnan-feature-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(15, 107, 82, 0.25);
+    box-shadow: var(--shadow-md);
+}
+
+.afnan-feature-icon {
+    display: grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-size: 1.35rem;
+    line-height: 1;
+}
+
+.afnan-feature-card h3 {
+    font-size: 1.02rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+}
+
+.afnan-feature-card p {
+    font-size: 0.87rem;
+    color: var(--muted);
+}
+
+/* =========================================================
+   STATISTIK
+   ========================================================= */
+
+.afnan-stats-band {
+    position: relative;
+    overflow: hidden;
+    padding: 66px 0;
+    background: linear-gradient(135deg, #0a3b2e 0%, #0f6b52 100%);
+    color: #fff;
+    isolation: isolate;
+}
+
+.afnan-stats-band::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 12% 20%, rgba(230, 165, 60, 0.22), transparent 40%),
+        radial-gradient(circle at 88% 90%, rgba(255, 255, 255, 0.12), transparent 45%);
+}
+
+.afnan-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.afnan-stat strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.4vw, 2.8rem);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #fff;
+}
+
+.afnan-stat span {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.afnan-stat + .afnan-stat {
+    border-left: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* =========================================================
+   TESTIMONI
+   ========================================================= */
+
+.afnan-testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.afnan-testimonial-card {
+    position: relative;
+    padding: 32px 28px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.afnan-testimonial-card::before {
+    content: "“";
+    position: absolute;
+    top: 10px;
+    right: 24px;
+    font-family: var(--font-display);
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--primary);
+    opacity: 0.1;
+}
+
+.afnan-stars {
+    margin-bottom: 14px;
+    color: var(--accent);
+    font-size: 0.9rem;
+    letter-spacing: 0.16em;
+}
+
+.afnan-testimonial-card > p {
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+    margin-bottom: 22px;
+}
+
+.afnan-testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.afnan-avatar {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #12795c, #0a4a39);
+    color: #fff;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+}
+
+.afnan-testimonial-author strong {
+    display: block;
+    font-size: 0.87rem;
+    font-weight: 800;
+    line-height: 1.3;
+}
+
+.afnan-testimonial-author span {
+    font-size: 0.76rem;
+    color: var(--muted);
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.afnan-cta-section {
+    position: relative;
+    padding: 112px 0;
+    color: #fff;
+    text-align: center;
+    background-color: var(--primary-deep);
+    background-size: cover;
+    background-position: center;
+    isolation: isolate;
+}
+
+.afnan-cta-nature {
+    background-image: url("../img/Nature.png");
+}
+
+.afnan-cta-gunung {
+    background-image: url("../img/Panorama%20Gunung%20Berapi%20Saat%20Senja.png");
+}
+
+.afnan-cta-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(180deg, rgba(5, 24, 19, 0.88) 0%, rgba(5, 24, 19, 0.74) 100%),
+        radial-gradient(circle at 50% 120%, rgba(230, 165, 60, 0.22), transparent 55%);
+}
+
+.afnan-cta-section .afnan-container {
+    max-width: 720px;
+}
+
+.afnan-cta-section .afnan-centered-heading {
+    margin-bottom: 34px;
+}
+
+.afnan-cta-section h2 {
+    margin-top: 16px;
+}
+
+.afnan-cta-section .afnan-centered-heading > p:not(.afnan-eyebrow) {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.afnan-cta-section .afnan-eyebrow {
+    justify-content: center;
+    color: #f3c97e;
+}
+
+.afnan-cta-section .afnan-btn {
+    margin-top: 26px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.afnan-footer {
+    padding-top: 76px;
+    background: #081b16;
+    color: #d7e2dd;
+}
+
+.afnan-footer-grid {
+    display: grid;
+    grid-template-columns: 1.55fr 0.8fr 0.8fr 1.35fr;
+    gap: 48px;
+    padding-bottom: 54px;
+}
+
+.afnan-footer-grid > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+}
+
+.afnan-footer .afnan-logo {
+    margin-bottom: 8px;
+}
+
+.afnan-footer .afnan-logo-text {
+    color: #fff;
+}
+
+.afnan-footer .afnan-logo-text span {
+    color: #7fd1b5;
+}
+
+.afnan-footer-brand > p {
+    max-width: 300px;
+    font-size: 0.88rem;
+    color: #9fb3aa;
+    margin-bottom: 8px;
+}
+
+.afnan-footer h3 {
+    margin-bottom: 10px;
+    color: #fff;
+    font-size: 0.92rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+}
+
+.afnan-footer-grid a:not(.afnan-logo):not(.afnan-social) {
+    font-size: 0.86rem;
+    color: #9fb3aa;
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.afnan-footer-grid a:not(.afnan-logo):not(.afnan-social):hover {
+    color: #fff;
+    transform: translateX(3px);
+}
+
+.afnan-footer-grid p {
+    font-size: 0.86rem;
+    color: #9fb3aa;
+}
+
+.afnan-socials {
+    display: flex;
+    gap: 9px;
+    margin-top: 8px;
+}
+
+.afnan-social {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    color: #cfe0d9;
+    font-size: 0.66rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.afnan-social:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #2a1c05;
+}
+
+.afnan-footer-newsletter > p {
+    max-width: 290px;
+    margin-bottom: 6px;
+}
+
+.afnan-footer-newsletter > p a {
+    color: #cfe0d9;
+}
+
+.afnan-footer-newsletter > p a:hover {
+    color: #fff;
+}
+
+.afnan-footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 22px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.78rem;
+    color: #82988f;
+}
+
+.afnan-footer-bottom div {
+    display: flex;
+    gap: 20px;
+}
+
+.afnan-footer-bottom a:hover {
+    color: #fff;
+}
+
+/* =========================================================
+   PAGE HERO (HALAMAN DALAM)
+   ========================================================= */
+
+.afnan-page-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 360px;
+    padding: 116px 0 88px;
+    color: #fff;
+    background-color: var(--primary-deep);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    isolation: isolate;
+}
+
+.afnan-page-hero-tentang {
+    background-image: url("../img/Gunung.jfif");
+}
+.afnan-page-hero-destinasi {
+    background-image: url("../img/Tugu Bali.jfif");
+}
+.afnan-page-hero-paket {
+    background-image: url("../img/Danau Toba.jfif");
+}
+.afnan-page-hero-galeri {
+    background-image: url("../img/Swis.jfif");
+}
+.afnan-page-hero-kontak {
+    background-image: url("../img/Terasering\ Sawah\ dengan\ Kolam\ Turkuois.png");
+}
+
+.afnan-page-hero-gunung {
+    background-image: url("../img/Panorama%20Gunung%20Berapi%20Saat%20Senja.png");
+}
+
+.afnan-page-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        linear-gradient(180deg, rgba(5, 24, 19, 0.78) 0%, rgba(5, 24, 19, 0.6) 100%),
+        linear-gradient(90deg, rgba(5, 24, 19, 0.82) 0%, rgba(5, 24, 19, 0.2) 80%);
+}
+
+.afnan-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-size: 0.76rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.62);
+}
+
+.afnan-breadcrumb a {
+    transition: color 0.2s ease;
+}
+
+.afnan-breadcrumb a:hover {
+    color: #fff;
+}
+
+.afnan-breadcrumb span {
+    opacity: 0.5;
+}
+
+.afnan-page-hero h1 {
+    max-width: 820px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2.4rem, 5vw, 3.9rem);
+    line-height: 1.06;
+    letter-spacing: -0.03em;
+    margin: 4px 0 16px;
+}
+
+.afnan-page-hero p:last-child {
+    max-width: 560px;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 0.98rem;
+}
+
+/* =========================================================
+   DESTINATION HERO SLIDER
+   ========================================================= */
+
+.destination-hero-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 310px;
+    overflow: hidden;
+    color: #fff;
+}
+
+.destination-slides {
+    position: absolute;
+    inset: 0;
+}
+
+.destination-slide {
+    position: absolute;
+    inset: 0;
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    transform: translateX(100%);
+    transition:
+        transform 0.8s ease,
+        opacity 0.8s ease;
+}
+
+.destination-slide.active {
+    z-index: 1;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.destination-slide.previous {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.destination-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.destination-content {
+    position: relative;
+    z-index: 3;
+    padding: 0 7.5%;
+}
+
+.destination-content h1 {
+    margin: 15px 0 5px;
+    font-size: clamp(38px, 6vw, 64px);
+}
+
+.destination-content p {
+    font-size: 15px;
+}
+
+.destination-prev,
+.destination-next {
+    position: absolute;
+    top: 50%;
+    z-index: 4;
+    padding: 12px 16px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.destination-prev {
+    left: 15px;
+}
+
+.destination-next {
+    right: 15px;
+}
+
+@media (max-width: 600px) {
+    .destination-hero-slider {
+        height: 250px;
+    }
+
+    .destination-content {
+        padding: 0 25px;
+    }
+}
+
+/* =========================================================
+   FILTER DESTINASI
+   ========================================================= */
+
+.afnan-filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.afnan-filter-btn {
+    padding: 10px 21px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #fff;
+    color: #45554e;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.afnan-filter-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateY(-1px);
+}
+
+.afnan-filter-btn.afnan-filter-active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: #fff;
+    box-shadow: 0 8px 18px rgba(15, 107, 82, 0.2);
+}
+
+.afnan-search-note {
+    margin-bottom: 32px;
+    font-size: 0.86rem;
+    color: var(--muted);
+}
+
+.afnan-disclaimer {
+    font-size: 0.82rem;
+    color: var(--muted);
+}
+
+.afnan-container > .afnan-disclaimer {
+    margin-top: 24px;
+}
+
+/* =========================================================
+   PAKET WISATA
+   ========================================================= */
+
+.afnan-package-card .afnan-card-content > p {
+    margin-bottom: 14px;
+}
+
+.afnan-package-features {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.afnan-package-features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    font-size: 0.84rem;
+    color: var(--ink-soft);
+}
+
+.afnan-package-features li::before {
+    content: "✓";
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    border-radius: 50%;
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-size: 0.6rem;
+    font-weight: 800;
+}
+
+.afnan-price {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--primary-dark);
+    margin: 2px 0 18px;
+}
+
+.afnan-price small {
+    display: block;
+    margin-bottom: 2px;
+    font-family: var(--font-body);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.afnan-package-card .afnan-btn {
+    width: 100%;
+    margin-top: auto;
+}
+
+.afnan-package-card .afnan-btn:hover {
+    transform: none;
+    box-shadow: 0 8px 18px rgba(15, 107, 82, 0.2);
+}
+
+/* =========================================================
+   DETAIL DESTINASI
+   ========================================================= */
+
+.afnan-detail-layout {
+    display: grid;
+    grid-template-columns: 1.55fr 0.9fr;
+    align-items: start;
+    gap: 52px;
+}
+
+.afnan-detail-main > img {
+    height: 440px;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 30px;
+}
+
+.afnan-detail-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.afnan-chip {
+    padding: 6px 13px;
+    border-radius: 999px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-size: 0.69rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.afnan-chip.afnan-chip-sand {
+    background: var(--accent-soft);
+    color: #8a5a09;
+}
+
+.afnan-detail-main > p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    margin-bottom: 14px;
+}
+
+.afnan-highlight-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 26px 0;
+}
+
+.afnan-highlight {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 15px 18px;
+    border-radius: var(--radius);
+    background: var(--sand);
+}
+
+.afnan-highlight span {
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.afnan-highlight strong {
+    display: block;
+    font-size: 0.83rem;
+    font-weight: 800;
+}
+
+.afnan-highlight small {
+    font-size: 0.74rem;
+    color: var(--muted);
+}
+
+.afnan-detail-main h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin: 30px 0 6px;
+}
+
+.afnan-itinerary {
+    display: grid;
+    margin-top: 10px;
+}
+
+.afnan-itinerary li {
+    display: grid;
+    grid-template-columns: 66px 1fr;
+    gap: 20px;
+    padding: 18px 0;
+    border-bottom: 1px dashed var(--line);
+}
+
+.afnan-itinerary li:last-child {
+    border-bottom: 0;
+}
+
+.afnan-day {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    align-self: start;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.afnan-itinerary h4 {
+    margin-bottom: 3px;
+    font-size: 0.92rem;
+    font-weight: 800;
+}
+
+.afnan-itinerary p {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.afnan-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.afnan-detail-image {
+    height: 440px;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.afnan-list {
+    display: grid;
+    gap: 9px;
+    padding: 0;
+    margin: 16px 0 26px;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.afnan-list li {
+    position: relative;
+    padding-left: 24px;
+}
+
+.afnan-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    display: grid;
+    place-items: center;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-size: 0.56rem;
+    font-weight: 800;
+}
+
+/* Kartu pemesanan */
+
+.afnan-booking-card {
+    position: sticky;
+    top: 106px;
+    padding: 28px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.afnan-booking-card h2 {
+    font-size: 1.55rem;
+    margin: 8px 0 4px;
+}
+
+.afnan-booking-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 14px;
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 18px;
+}
+
+.afnan-booking-meta b {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--ink);
+    font-weight: 800;
+}
+
+.afnan-booking-meta b::before {
+    content: "★";
+    color: var(--accent);
+    font-size: 0.72rem;
+}
+
+.afnan-booking-price {
+    display: flex;
+    align-items: flex-end;
+    gap: 7px;
+    padding: 18px 0;
+    border-block: 1px solid var(--line);
+}
+
+.afnan-booking-price strong {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--primary-dark);
+}
+
+.afnan-booking-price span {
+    font-size: 0.76rem;
+    color: var(--muted);
+    padding-bottom: 3px;
+}
+
+.afnan-booking-card .afnan-btn {
+    width: 100%;
+    margin: 20px 0 12px;
+}
+
+.afnan-booking-note {
+    font-size: 0.74rem;
+    text-align: center;
+    color: var(--muted);
+}
+
+.afnan-booking-card h4 {
+    margin: 22px 0 10px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.afnan-booking-list {
+    display: grid;
+    gap: 9px;
+}
+
+.afnan-booking-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    font-size: 0.82rem;
+    color: var(--ink-soft);
+}
+
+.afnan-booking-list li::before {
+    content: "✓";
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    width: 17px;
+    height: 17px;
+    margin-top: 3px;
+    border-radius: 50%;
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-size: 0.56rem;
+    font-weight: 800;
+}
+
+/* =========================================================
+   GALERI
+   ========================================================= */
+
+.afnan-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 220px;
+    grid-auto-flow: dense;
+    gap: 18px;
+}
+
+.afnan-gallery-item {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    cursor: zoom-in;
+    background: var(--sand-deep);
+}
+
+.afnan-gallery-item:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.afnan-gallery-item:nth-child(5) {
+    grid-row: span 2;
+}
+
+.afnan-gallery-item img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.afnan-gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+.afnan-gallery-item figcaption {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 40px 20px 16px;
+    background: linear-gradient(180deg, transparent, rgba(4, 18, 14, 0.78));
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.afnan-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 26px;
+    background: rgba(4, 14, 11, 0.94);
+    backdrop-filter: blur(6px);
+}
+
+.afnan-lightbox.afnan-open {
+    display: flex;
+}
+
+.afnan-lightbox img {
+    width: auto;
+    max-width: 92vw;
+    max-height: 86vh;
+    border-radius: var(--radius);
+    box-shadow: 0 40px 90px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+}
+
+.afnan-lightbox-close {
+    position: absolute;
+    top: 22px;
+    right: 24px;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.afnan-lightbox-close:hover {
+    background: #fff;
+    color: var(--ink);
+}
+
+body.afnan-no-scroll {
+    overflow: hidden;
+}
+
+/* =========================================================
+   KONTAK
+   ========================================================= */
+
+.afnan-contact-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 80px;
+}
+
+.afnan-contact-card {
+    padding: 28px 26px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.afnan-contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.afnan-contact-card .afnan-feature-icon {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 16px;
+    border-radius: 14px;
+    font-size: 1.1rem;
+}
+
+.afnan-contact-card h3 {
+    margin-bottom: 4px;
+    font-size: 0.95rem;
+    font-weight: 800;
+}
+
+.afnan-contact-card p,
+.afnan-contact-card a {
+    font-size: 0.86rem;
+    color: var(--muted);
+}
+
+.afnan-contact-card a:hover {
+    color: var(--primary);
+}
+
+.afnan-contact-grid {
+    display: grid;
+    grid-template-columns: 0.92fr 1.08fr;
+    align-items: start;
+    gap: 64px;
+}
+
+.afnan-contact-info > p {
+    color: var(--muted);
+    margin: 10px 0;
+    font-size: 0.93rem;
+}
+
+.afnan-contact-info > p strong {
+    color: var(--ink);
+}
+
+.afnan-contact-info > .afnan-eyebrow {
+    margin: 0 0 4px;
+    font-size: 0.68rem;
+    color: var(--primary);
+}
+
+.afnan-contact-info h2 {
+    margin-bottom: 18px;
+}
+
+.afnan-hours {
+    margin-top: 26px;
+    padding: 22px 24px;
+    border-radius: var(--radius);
+    background: #fff;
+    border: 1px solid var(--line);
+}
+
+.afnan-hours h3 {
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.afnan-hours p {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 6px 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.afnan-hours p strong {
+    color: var(--ink-soft);
+    font-weight: 700;
+}
+
+.afnan-contact-points {
+    display: grid;
+    gap: 9px;
+    margin: 18px 0 4px;
+}
+
+.afnan-contact-points li {
+    position: relative;
+    padding-left: 27px;
+    font-size: 0.88rem;
+    color: var(--muted);
+}
+
+.afnan-contact-points li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: grid;
+    place-items: center;
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+    border-radius: 50%;
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-size: 0.58rem;
+    font-weight: 800;
+}
+
+.afnan-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 34px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.afnan-form-head {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+}
+
+.afnan-form-head h3 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.afnan-form-head p:last-child {
+    font-size: 0.88rem;
+    color: var(--muted);
+}
+
+.afnan-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.afnan-form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.afnan-contact-form label {
+    margin: 0;
+    padding-left: 2px;
+    color: var(--ink-soft);
+}
+
+.afnan-required {
+    color: var(--accent);
+}
+
+.afnan-contact-form input,
+.afnan-contact-form textarea {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    background: #fafbf9;
+    outline: none;
+    font-size: 0.9rem;
+    color: var(--ink);
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.afnan-contact-form input::placeholder,
+.afnan-contact-form textarea::placeholder {
+    color: #9aa8a2;
+}
+
+.afnan-contact-form input:hover,
+.afnan-contact-form textarea:hover {
+    border-color: #cbd7d1;
+}
+
+.afnan-contact-form input:focus,
+.afnan-contact-form textarea:focus {
+    border-color: var(--primary);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(15, 107, 82, 0.1);
+}
+
+.afnan-contact-form textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.afnan-botcheck {
+    display: none !important;
+}
+
+.afnan-form-submit {
+    width: 100%;
+    margin-top: 4px;
+}
+
+.afnan-form-submit.afnan-is-loading {
+    cursor: wait;
+    opacity: 0.85;
+    transform: none;
+    box-shadow: 0 12px 26px rgba(15, 107, 82, 0.18);
+}
+
+.afnan-form-submit.afnan-is-loading::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    border-top-color: #fff;
+    animation: afnan-spinner 0.7s linear infinite;
+}
+
+@keyframes afnan-spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.afnan-form-message {
+    display: none;
+    padding: 12px 15px;
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    font-size: 0.84rem;
+    font-weight: 600;
+    line-height: 1.55;
+}
+
+.afnan-form-message:not(:empty) {
+    display: block;
+}
+
+.afnan-form-message[data-state="success"] {
+    color: #0a5a44;
+    background: #e8f6ef;
+    border-color: #bfe6d6;
+}
+
+.afnan-form-message[data-state="error"] {
+    color: #8a2c1f;
+    background: #fceeea;
+    border-color: #f3cec4;
+}
+
+.afnan-form-message[data-state="pending"] {
+    color: var(--muted);
+    background: #f4f6f4;
+    border-color: var(--line);
+}
+
+.afnan-form-note {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-align: center;
+    line-height: 1.6;
+}
+
+.afnan-contact-visual {
+    position: relative;
+    overflow: hidden;
+    margin-top: 28px;
+    border-radius: var(--radius-lg);
+    min-height: 210px;
+    box-shadow: var(--shadow-sm);
+}
+
+.afnan-contact-visual img {
+    height: 210px;
+}
+
+.afnan-contact-visual div {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 34px 22px 18px;
+    background: linear-gradient(180deg, transparent, rgba(4, 20, 15, 0.82));
+    color: #fff;
+}
+
+.afnan-contact-visual strong {
+    display: block;
+    font-size: 0.9rem;
+}
+
+.afnan-contact-visual span {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* =========================================================
+   ANIMASI REVEAL
+   ========================================================= */
+
+.afnan-reveal {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+        opacity 0.7s cubic-bezier(0.2, 0.7, 0.3, 1),
+        transform 0.7s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+.afnan-reveal.afnan-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1080px) {
+    .afnan-nav-links {
+        gap: 18px;
+    }
+
+    .afnan-nav-links a {
+        font-size: 0.85rem;
+    }
+
+    .afnan-about-grid {
+        gap: 52px;
+    }
+
+    .afnan-about-main {
+        height: 440px;
+    }
+
+    .afnan-feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .afnan-detail-layout {
+        gap: 36px;
+    }
+}
+
+@media (max-width: 960px) {
+    .afnan-menu-toggle {
+        display: block;
+        order: 3;
+    }
+
+    .afnan-nav-cta {
+        display: none;
+    }
+
+    .afnan-nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 4%;
+        right: 4%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        padding: 14px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-md);
+    }
+
+    .afnan-nav-links.afnan-open {
+        display: flex;
+    }
+
+    .afnan-nav-links a {
+        padding: 11px 14px;
+        border-radius: 10px;
+        font-size: 0.9rem;
+    }
+
+    .afnan-nav-links a::after {
+        display: none;
+    }
+
+    .afnan-nav-links a:hover,
+    .afnan-nav-links .afnan-active {
+        background: var(--primary-soft);
+    }
+
+    .afnan-search-box {
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+    }
+
+    .afnan-search-item:nth-child(3) {
+        border-left: 0;
+    }
+
+    .afnan-search-box .afnan-btn {
+        grid-column: span 2;
+        min-height: 54px;
+    }
+
+    .afnan-card-grid {
+        gap: 22px;
+    }
+
+    .afnan-about-grid {
+        grid-template-columns: 1fr;
+        gap: 54px;
+    }
+
+    .afnan-about-media {
+        max-width: 620px;
+    }
+
+    .afnan-about-content > p {
+        max-width: 620px;
+    }
+
+    .afnan-footer-grid {
+        grid-template-columns: 1.3fr 1fr 1fr;
+        gap: 36px;
+    }
+
+    .afnan-footer-newsletter {
+        grid-column: span 3;
+        max-width: 480px;
+    }
+
+    .afnan-detail-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .afnan-booking-card {
+        position: static;
+    }
+
+    .afnan-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 42px;
+    }
+
+    .afnan-contact-cards {
+        margin-bottom: 64px;
+    }
+}
+
+@media (max-width: 820px) {
+    .afnan-section {
+        padding: 76px 0;
+    }
+
+    .afnan-hero-content {
+        padding: 72px 0 140px;
+    }
+
+    .afnan-hero h1 {
+        font-size: clamp(2.6rem, 8vw, 3.8rem);
+    }
+
+    .afnan-hero-stat {
+        padding: 0 24px;
+    }
+
+    .afnan-hero-stat strong {
+        font-size: 1.6rem;
+    }
+
+    .afnan-card-grid,
+    .afnan-testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .afnan-section-heading {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+
+    .afnan-section-heading h2 {
+        max-width: 520px;
+    }
+
+    .afnan-stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 34px 20px;
+    }
+
+    .afnan-stat:nth-child(3) {
+        border-left: 0;
+    }
+
+    .afnan-page-hero {
+        padding: 92px 0 70px;
+        min-height: 320px;
+    }
+
+    .afnan-gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 190px;
+    }
+
+    .afnan-gallery-item:nth-child(1) {
+        grid-column: span 2;
+    }
+
+    .afnan-contact-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .afnan-highlight-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 680px) {
+    .afnan-container {
+        width: calc(100% - 36px);
+    }
+
+    .afnan-search-box {
+        grid-template-columns: 1fr;
+        padding: 10px;
+        gap: 0;
+    }
+
+    .afnan-search-item {
+        border-left: 0;
+        border-top: 1px solid var(--line);
+        padding: 12px 14px;
+    }
+
+    .afnan-search-item:first-child {
+        border-top: 0;
+    }
+
+    .afnan-search-box .afnan-btn {
+        grid-column: auto;
+        min-height: 52px;
+        margin-top: 6px;
+    }
+
+    .afnan-search-section {
+        margin-top: -34px;
+    }
+
+    .afnan-trust-row {
+        gap: 9px 18px;
+        margin-top: 18px;
+    }
+
+    .afnan-hero {
+        min-height: 600px;
+    }
+
+    .afnan-hero-content {
+        padding: 64px 0 118px;
+    }
+
+    .afnan-hero-stats {
+        margin-top: 40px;
+        gap: 22px 0;
+    }
+
+    .afnan-hero-stat {
+        flex: 1 1 30%;
+        padding: 0 16px;
+    }
+
+    .afnan-hero-stat:first-child {
+        padding-left: 0;
+    }
+
+    .afnan-hero-stat strong {
+        font-size: 1.45rem;
+    }
+
+    .afnan-hero-stat span {
+        font-size: 0.62rem;
+    }
+
+    .afnan-card-grid,
+    .afnan-testimonial-grid,
+    .afnan-feature-grid,
+    .afnan-contact-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .afnan-about-main {
+        height: 360px;
+    }
+
+    .afnan-about-secondary {
+        height: 160px;
+    }
+
+    .afnan-about-badge {
+        top: 18px;
+        right: 0;
+    }
+
+    .afnan-section {
+        padding: 62px 0;
+    }
+
+    .afnan-footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+    }
+
+    .afnan-footer-brand,
+    .afnan-footer-newsletter {
+        grid-column: span 2;
+    }
+
+    .afnan-footer {
+        padding-top: 58px;
+    }
+
+    .afnan-cta-section {
+        padding: 82px 0;
+    }
+
+    .afnan-contact-form {
+        padding: 24px 20px;
+    }
+
+    .afnan-form-row {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .afnan-form-head h3 {
+        font-size: 1.4rem;
+    }
+
+    .afnan-detail-main > img {
+        height: 300px;
+    }
+
+    .afnan-itinerary li {
+        grid-template-columns: 58px 1fr;
+        gap: 14px;
+    }
+
+    .afnan-gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 160px;
+        gap: 12px;
+    }
+
+    .afnan-gallery-item {
+        border-radius: var(--radius);
+    }
+
+    .afnan-gallery-item figcaption {
+        font-size: 0.72rem;
+        padding: 26px 12px 10px;
+    }
+}
+
+@media (max-width: 460px) {
+    .afnan-container {
+        width: calc(100% - 32px);
+    }
+
+    .afnan-logo-text {
+        font-size: 1.14rem;
+    }
+
+    .afnan-hero h1 {
+        font-size: 2.45rem;
+    }
+
+    .afnan-button-row .afnan-btn {
+        width: 100%;
+    }
+
+    .afnan-hero-content {
+        padding: 56px 0 110px;
+    }
+
+    .afnan-hero-stat {
+        flex: 1 1 0;
+        padding: 0 10px;
+    }
+
+    .afnan-hero-stat strong {
+        font-size: 1.3rem;
+    }
+
+    .afnan-hero-stat span {
+        font-size: 0.56rem;
+        letter-spacing: 0.04em;
+    }
+
+    .afnan-about-media {
+        padding: 0 18px 34px 0;
+    }
+
+    .afnan-about-main {
+        height: 300px;
+    }
+
+    .afnan-about-secondary {
+        display: none;
+    }
+
+    .afnan-about-badge {
+        top: auto;
+        bottom: 0;
+        right: 0;
+    }
+
+    .afnan-section-heading h2,
+    .afnan-about-content h2,
+    .afnan-centered-heading h2,
+    .afnan-contact-info h2,
+    .afnan-detail-layout h2,
+    .afnan-cta-section h2 {
+        font-size: 1.85rem;
+    }
+
+    .afnan-footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .afnan-footer-brand,
+    .afnan-footer-newsletter {
+        grid-column: auto;
+    }
+
+    .afnan-stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .afnan-gallery-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 230px;
+    }
+
+    .afnan-gallery-item:nth-child(1),
+    .afnan-gallery-item:nth-child(5) {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .afnan-highlight-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .afnan-contact-cards {
+        gap: 14px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
